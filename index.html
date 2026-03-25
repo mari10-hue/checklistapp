@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SHERPA SQCDMN</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- View: Entry / QR Code -->
+    <div id="view-entry" class="view active">
+      <div class="danone-entry-card">
+        <img src="./logo.png" alt="DANONE" class="danone-logo" />
+        <h2 class="danone-welcome-text">BIENVENUE SUR<br>L'APPLICATION<br>SHERPA CHECKLIST</h2>
+        
+        <div class="danone-qr-wrapper">
+          <div id="qrcode-container"></div>
+        </div>
+        
+        <p class="danone-scan-text">SCANNEZ POUR<br>ACCÉDER AU MENU</p>
+        
+        <button id="btn-enter" class="btn-invisible-access mt-4">Accès Direct PC (Demo)</button>
+      </div>
+    </div>
+
+    <!-- View: Role Selection Menu -->
+    <div id="view-menu" class="view">
+      <div class="header">
+        <h1>Choix du Rôle</h1>
+        <button class="btn-icon" id="btn-dashboard-nav" title="Dashboard">📋</button>
+      </div>
+      <div class="menu-container">
+        <button class="btn-role" data-role="factory">
+          <span class="role-icon">🏭</span>
+          <span class="role-text">Responsable Projet Usine<br><small style="font-weight:400;color:gray;">(Checklist Journalière)</small></span>
+        </button>
+        <button class="btn-role" data-role="central">
+          <span class="role-icon">🏢</span>
+          <span class="role-text">Responsable Projet Centrale<br><small style="font-weight:400;color:gray;">(Checklist Hebdomadaire)</small></span>
+        </button>
+        <button class="btn-role" data-role="director">
+          <span class="role-icon">👔</span>
+          <span class="role-text">Directeur Projet<br><small style="font-weight:400;color:gray;">(Checklist Mensuelle)</small></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- View: Checklist -->
+    <div id="view-checklist" class="view">
+      <div class="header">
+        <button class="btn-icon" id="btn-back-menu">◀ Retour</button>
+        <h1 id="checklist-title">Checklist</h1>
+      </div>
+      <div id="checklist-container">
+        <!-- Items and Inline Submit Button Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- View: Dashboard (History) -->
+    <div id="view-dashboard" class="view">
+      <div class="header">
+        <button class="btn-icon" id="btn-back-from-dashboard">◀ Retour</button>
+        <h1>Historique des Sessions</h1>
+      </div>
+      <div id="dashboard-list" class="dashboard-items">
+        <!-- History injected dynamically via JS -->
+      </div>
+    </div>
+
+    <!-- View: History Detail -->
+    <div id="view-history-detail" class="view">
+      <div class="header">
+        <button class="btn-icon" id="btn-back-to-dashboard">◀ Retour</button>
+        <h1 id="history-detail-title">Détails Checklist</h1>
+      </div>
+      <div id="history-detail-container" style="padding: 1.5rem;">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
